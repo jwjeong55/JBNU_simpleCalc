@@ -12,12 +12,14 @@ def subtract(x, y):
 def multiply(x, y):
     return x * y
 
+def divide (x,y):
+    return 0
 
 print("Select operation.")
 print("1.Add")
 print("2.Subtract")
 print("3.Multiply")
-print("4.Divide")
+print("4.Divide") 
 
 
 while True:
