@@ -12,6 +12,8 @@ def subtract(x, y):
 def multiply(x, y):
     return x * y
 
+#Need to define divide function.
+
 
 print("Select operation.")
 print("1.Add")
