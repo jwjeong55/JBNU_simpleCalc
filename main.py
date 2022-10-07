@@ -42,7 +42,7 @@ while True:
             print(num1, "*", num2, "=", multiply(num1, num2))
         
         elif choice == '4':
-            if(num1 == 0 or num2 == 0):
+            if(num2 == 0):
                 print("zero divide exception")
             else:
                 print(num1, "/" , num2, "=", divide(num1, num2))
