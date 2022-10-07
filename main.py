@@ -14,7 +14,8 @@ def multiply(x, y):
 
 #Need to define divide function.
 def divide (x,y):
-    return 0
+    return x/y
+
 
 print("Select operation.")
 print("1.Add")
