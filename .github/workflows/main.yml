@@ -2,14 +2,14 @@ name: JBNU-actions
 
 on:
     push:
-      branches: [ master, dev ]
+      branches: [ main ]
       paths:
         - "**.py"
       paths-ignore:
         - "doc/**"
       
     pull_request:
-      branches: [ master ]
+      branches: [ main ]
       paths:
         - "**.py"
       paths-ignore:
