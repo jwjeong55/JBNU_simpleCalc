@@ -8,6 +8,7 @@ def add(x, y):
 def subtract(x, y):
     return x - y
 
+
 # This function multiplies two numbers
 def multiply(x, y):
     return x * y
@@ -16,6 +17,7 @@ def multiply(x, y):
 def divide (x,y):
     return x/y
 
+print("Calculator started.")
 
 print("Select operation.")
 print("1.Add")
@@ -54,3 +56,7 @@ while True:
 
     else:
         print("Invalid Input")
+
+
+
+#commit test
