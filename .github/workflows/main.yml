@@ -3,17 +3,9 @@ name: JBNU-actions
 on:
     push:
       branches: [ main ]
-      paths:
-        - "**.py"
-      paths-ignore:
-        - "doc/**"
-      
+    
     pull_request:
-      branches: [ main ]
-      paths:
-        - "**.py"
-      paths-ignore:
-        - "doc/**"
+      branches: [ main, dev ]
 
 jobs:
   Explore-GitHub-Actions:
