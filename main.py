@@ -1,4 +1,4 @@
-# Program make a simple calculator
+    # Program make a simple calculator
 
 # This function adds two numbers
 def add(x, y):
@@ -14,6 +14,9 @@ def multiply(x, y):
 
 #Need to define divide function.
 def divide (x,y):
+    if y==0:
+        #print("Error : div by zero")
+        return "Error : div by zero";
     return x/y
 
 print("Select operation.")
