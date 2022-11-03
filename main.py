@@ -1,5 +1,5 @@
 # Program make a simple calculator
-
+#safsdfasfddasfdasdfasdfaffasfdasadffsdafasdfasdfsafd
 # This function adds two numbers
 def add(x, y):
     return x + y
@@ -47,6 +47,9 @@ while True:
         elif choice =='4':
             print(num1, "/", num2, "=", divide(num1,num2))
             
+
+        elif cohice =='4':
+            print(num1, "/", num2, "=", divide(num1.num2))
 
         # check if user wants another calculation
         # break the while loop if answer is no
