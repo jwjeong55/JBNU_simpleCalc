@@ -14,9 +14,6 @@ def multiply(x, y):
 
 #Need to define divide function.
 def divide (x,y):
-    if y==0:
-        #print("Error : div by zero")
-        return "Error : div by zero";
     return x/y
 
 print("Select operation.")
@@ -28,12 +25,13 @@ print("4.Divide")
 
 while True:
     # take input from the user
-    choice = input("Enter choice(1/2/3): ")
+    choice = input("Enter choice(1/2/3/4): ")
 
     # check if choice is one of the four options
-    if choice in ('1', '2', '3'):
+    if choice in ('1', '2', '3', '4'):
         num1 = float(input("Enter first number: "))
         num2 = float(input("Enter second number: "))
+
 
         if choice == '1':
             print(num1, "+", num2, "=", add(num1, num2))
@@ -44,13 +42,48 @@ while True:
         elif choice == '3':
             print(num1, "*", num2, "=", multiply(num1, num2))
         elif choice == '4':
-            print(num1, "/", num2, "=", divide(num1, num2))
+            if num2!=0:
+                print(num1, "/", num2, "=", divide(num1, num2))
+            else:
+                print("Error : div by zero")
 
         # check if user wants another calculation
         # break the while loop if answer is no
+        firstFlag = False
+        secondFlag = False
+
+
         next_calculation = input("Let's do next calculation? (yes/no): ")
-        if next_calculation == "no":
+        next_calculation=next_calculation.upper()
+
+        if next_calculation == "NO":
+            next_calculation = input("Are you sure? (yes/no): ")
+            next_calculation=next_calculation.upper()
+            if next_calculation == "YES":
+                break
+        elif next_calculation == "YES":
             break
+        else:
+
+        while firstFlag == True:
+            next_calculation = input("Let's do next calculation? (yes/no): ")
+            next_calculation = next_calculation.upper()
+            if next_calculation == "YES": #continue calc
+                break
+            elif next_calculation == "NO": #quit calc
+                while secondFlag == True:
+                    next_calculation = input("Are you sure? (yes/no): ")
+                    next_calculation = next_calculation.upper()
+                    if next_calculation == "YES":
+                        quit()
+                    elif next_calculation == "NO" :
+                        break
+
+
+            else:
+
+
+
 
     else:
         print("Invalid Input")
