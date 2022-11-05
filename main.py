@@ -1,12 +1,14 @@
-import  calcu_function as cf
+import calcu_function as cf
+import logging
 
-
+logging.basicConfig(filename='CalcuRecord', level=logging.DEBUG, datefmt= '%Y-%m-%d %H:%M:%S',format = '%(asctime)s | %(levelname)s | %(message)s' )
 
 print("Select operation.")
 print("1.Add")
 print("2.Subtract")
 print("3.Multiply")
 print("4.Divide") 
+
 
 
 while True:
@@ -20,18 +22,34 @@ while True:
 
 
         if choice == '1':
-            print(num1, "+", num2, "=", cf.add(num1, num2))
+            resultString = str(num1)+ "+" + str(num2) +"=" + str(cf.add(num1,num2))
+            print(resultString)
+            logging.debug(resultString)
+
+
 
         elif choice == '2':
+            resultString = str(num1) + "-" + str(num2) + "=" + str(cf.subtract(num1, num2))
             print(num1, "-", num2, "=", cf.subtract(num1, num2))
+            logging.debug(resultString)
 
         elif choice == '3':
+            resultString = str(num1) + "*" + str(num2) + "=" + str(cf.multiply(num1, num2))
             print(num1, "*", num2, "=", cf.multiply(num1, num2))
+            logging.debug(resultString)
+
+
         elif choice == '4':
             if num2!=0:
+                resultString = str(num1) + "/" + str(num2) + "=" + str(cf.divide(num1, num2))
                 print(num1, "/", num2, "=", cf.divide(num1, num2))
+                logging.debug(resultString)
+
             else:
                 print("Error : div by zero")
+                logging.warning("input zero in divide")
+
+
 
         # check if user wants another calculation
         # break the while loop if answer is no
@@ -69,4 +87,5 @@ while True:
 
 
     else:
+        logging.warning("exceed range of input")
         print("Invalid Input")
