@@ -1,20 +1,6 @@
-    # Program make a simple calculator
+import  calcu_function as cf
 
-# This function adds two numbers
-def add(x, y):
-    return x + y
 
-# This function subtracts two numbers
-def subtract(x, y):
-    return x - y
-
-# This function multiplies two numbers
-def multiply(x, y):
-    return x * y
-
-#Need to define divide function.
-def divide (x,y):
-    return x/y
 
 print("Select operation.")
 print("1.Add")
@@ -34,53 +20,50 @@ while True:
 
 
         if choice == '1':
-            print(num1, "+", num2, "=", add(num1, num2))
+            print(num1, "+", num2, "=", cf.add(num1, num2))
 
         elif choice == '2':
-            print(num1, "-", num2, "=", subtract(num1, num2))
+            print(num1, "-", num2, "=", cf.subtract(num1, num2))
 
         elif choice == '3':
-            print(num1, "*", num2, "=", multiply(num1, num2))
+            print(num1, "*", num2, "=", cf.multiply(num1, num2))
         elif choice == '4':
             if num2!=0:
-                print(num1, "/", num2, "=", divide(num1, num2))
+                print(num1, "/", num2, "=", cf.divide(num1, num2))
             else:
                 print("Error : div by zero")
 
         # check if user wants another calculation
         # break the while loop if answer is no
         firstFlag = False
-        secondFlag = False
 
 
-        next_calculation = input("Let's do next calculation? (yes/no): ")
-        next_calculation=next_calculation.upper()
 
-        if next_calculation == "NO":
-            next_calculation = input("Are you sure? (yes/no): ")
-            next_calculation=next_calculation.upper()
-            if next_calculation == "YES":
-                break
-        elif next_calculation == "YES":
-            break
-        else:
 
-        while firstFlag == True:
+
+        while True:
             next_calculation = input("Let's do next calculation? (yes/no): ")
             next_calculation = next_calculation.upper()
             if next_calculation == "YES": #continue calc
                 break
             elif next_calculation == "NO": #quit calc
-                while secondFlag == True:
+                while True:
                     next_calculation = input("Are you sure? (yes/no): ")
                     next_calculation = next_calculation.upper()
                     if next_calculation == "YES":
                         quit()
-                    elif next_calculation == "NO" :
+                    elif next_calculation == "NO":
+                        firstFlag = True
                         break
 
+            if firstFlag == True:
+                break
 
-            else:
+
+
+
+
+
 
 
 
