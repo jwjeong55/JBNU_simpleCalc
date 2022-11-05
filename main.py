@@ -9,24 +9,17 @@ print("2.Subtract")
 print("3.Multiply")
 print("4.Divide") 
 
-
-
 while True:
-    # take input from the user
     choice = input("Enter choice(1/2/3/4): ")
 
-    # check if choice is one of the four options
     if choice in ('1', '2', '3', '4'):
         num1 = float(input("Enter first number: "))
         num2 = float(input("Enter second number: "))
-
 
         if choice == '1':
             resultString = str(num1)+ "+" + str(num2) +"=" + str(cf.add(num1,num2))
             print(resultString)
             logging.debug(resultString)
-
-
 
         elif choice == '2':
             resultString = str(num1) + "-" + str(num2) + "=" + str(cf.subtract(num1, num2))
@@ -38,7 +31,6 @@ while True:
             print(num1, "*", num2, "=", cf.multiply(num1, num2))
             logging.debug(resultString)
 
-
         elif choice == '4':
             if num2!=0:
                 resultString = str(num1) + "/" + str(num2) + "=" + str(cf.divide(num1, num2))
@@ -49,15 +41,7 @@ while True:
                 print("Error : div by zero")
                 logging.warning("input zero in divide")
 
-
-
-        # check if user wants another calculation
-        # break the while loop if answer is no
         firstFlag = False
-
-
-
-
 
         while True:
             next_calculation = input("Let's do next calculation? (yes/no): ")
@@ -73,19 +57,8 @@ while True:
                     elif next_calculation == "NO":
                         firstFlag = True
                         break
-
             if firstFlag == True:
                 break
-
-
-
-
-
-
-
-
-
-
     else:
         logging.warning("exceed range of input")
         print("Invalid Input")
